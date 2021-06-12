@@ -1,5 +1,18 @@
+body {
+  background-color: lightskyblue;
+}
+
 .App {
   text-align: center;
+  background-color: deeppink;
+}
+
+img {
+  max-width: 30px;
+  max-height: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 .App-link {
