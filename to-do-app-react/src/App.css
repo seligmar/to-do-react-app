@@ -8,6 +8,13 @@ body {
 
 h1 {
   background-color: deeppink;
+  text-align: center;
+}
+
+ul {
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: left;
 }
 
 img {
