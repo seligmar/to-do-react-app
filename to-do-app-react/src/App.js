@@ -27,15 +27,11 @@ class App extends React.Component {
 
   completeTask = (e, id) => {
     var thisTask = this.state.tasks.filter(task => task.id === id)
-    //var taskToUpdate = this.state.tasks.findIndex(task => task.id === id)
-    // console.log(taskToUpdate, thisTask)
+    var taskToUpdate = this.state.tasks.findIndex(task => task.id === id)
     thisTask[0].completed = !thisTask[0].completed
-    var newTaskArray = this.state.tasks.forEach(task =>
-      task.id === id ? (this.state.tasks[task] = thisTask) : null
-    )
-    console.log(newTaskArray)
-
-    //this.setState({ tasks: this.state.tasks.splice(taskToUpdate, 1, thisTask) })
+    var newTasks = this.state.tasks
+    newTasks.splice(taskToUpdate, 1, thisTask[0])
+    this.setState({ tasks: newTasks })
   }
 
   render () {

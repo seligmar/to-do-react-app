@@ -1,6 +1,4 @@
 const List = props => {
-  console.log(props.tasks)
-  // const tasks = props.tasks
   return (
     <ul>
       {props.tasks.map(task =>
