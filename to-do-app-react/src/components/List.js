@@ -1,5 +1,12 @@
-const List = props => {
-  return <div /> // <ul>props.array.forEach(element => {<li></li>})</ul>
-}
+// const List = props => {
+//   const tasks = props.tasks
+//   return (
+//     <div>
+//       {tasks.array.forEach(task => {
+//         ;<li key={task.id}>{task.name}</li>
+//       })}
+//     </div>
+//   )
+// }
 
-export default List
+// export default List
