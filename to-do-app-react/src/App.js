@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import Header from './components/Header'
+import InputForm from './components/InputForm'
+// import List from './components/List'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    newTask: '',
+    tasks: []
+  }
+
+  addTask = e => {
+    console.log(e)
+    //  e.preventDefault()
+    //  console.log(e.target.input.value)
+    // this.state.newTask
+  }
+
+  // addTask = () => {
+  //   this.setState(
+  //     ...{
+  //       task: '',
+  //       completed: false,
+  //       id: this.state.tasks.length + 1
+  //     }
+  //   )
+  // }
+
+  render () {
+    return (
+      <div className='App'>
+        <Header />
+        <InputForm addTask={this.addTask} />
+        {/* <List tasks={this.state.tasks} /> */}
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
