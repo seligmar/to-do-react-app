@@ -3,9 +3,21 @@ const List = props => {
   // const tasks = props.tasks
   return (
     <ul>
-      {props.tasks.map(task => (
-        <li key={task.id}>{task.taskName}</li>
-      ))}
+      {props.tasks.map(task =>
+        task.completed ? (
+          <li
+            key={task.id}
+            className='completed'
+            onClick={e => props.completeTask(e, task.id)}
+          >
+            {task.taskName}
+          </li>
+        ) : (
+          <li key={task.id} onClick={e => props.completeTask(e, task.id)}>
+            {task.taskName}
+          </li>
+        )
+      )}
     </ul>
   )
 }

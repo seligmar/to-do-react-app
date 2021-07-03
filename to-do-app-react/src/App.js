@@ -25,12 +25,25 @@ class App extends React.Component {
     formInfo.reset()
   }
 
+  completeTask = (e, id) => {
+    var thisTask = this.state.tasks.filter(task => task.id === id)
+    //var taskToUpdate = this.state.tasks.findIndex(task => task.id === id)
+    // console.log(taskToUpdate, thisTask)
+    thisTask[0].completed = !thisTask[0].completed
+    var newTaskArray = this.state.tasks.forEach(task =>
+      task.id === id ? (this.state.tasks[task] = thisTask) : null
+    )
+    console.log(newTaskArray)
+
+    //this.setState({ tasks: this.state.tasks.splice(taskToUpdate, 1, thisTask) })
+  }
+
   render () {
     return (
       <div className='App'>
         <Header />
         <InputForm addTask={this.addTask} clearForm={this.clearForm} />
-        <List tasks={this.state.tasks} />
+        <List tasks={this.state.tasks} completeTask={this.completeTask} />
       </div>
     )
   }
